@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Koko</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e7c2ed;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 1.5s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers content horizontally */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            background-color: #e7c2ed;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slideDown 1s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffe6f0;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #000000;
+        }
+
+        .media {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .media img, .media video {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Center the gif under the header */
+        .gif-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .gif-container img {
+            max-width: 300px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Been Together</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="memories.html">Memories</a>
+            <a href="reasons.html">Why I Love You</a>
+            <a href="been-together.html">Been Together</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const startDate = new Date("2023-05-14");
+                    const today = new Date();
+                    const diffTime = Math.abs(today - startDate);
+                    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                    const diffYears = today.getFullYear() - startDate.getFullYear();
+
+                    const anniversary = new Date(today.getFullYear(), startDate.getMonth(), startDate.getDate());
+                    const yearsTogether = today >= anniversary ? diffYears : diffYears - 1;
+
+                    document.getElementById("days-counter").innerText = `${diffDays} days`;
+                    document.getElementById("years-counter").innerText = `${yearsTogether} year${yearsTogether !== 1 ? 's' : ''}`;
+                });
+            </script>
+        </section>
+        <section>
+            <h2 class="counter">We have been together for <span id="days-counter">loading...</span>. 🤍</h2>
+        </section>
+        <!-- GIF centered under the header -->
+        <div class="gif-container">
+            <img src="https://media.tenor.com/6FX5WSa1QIwAAAAi/peach-goma-peach-and-goma.gif" alt="love-gif">
+        </div>
+    </main>
+</body>
+</html>

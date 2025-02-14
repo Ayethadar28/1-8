@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Koko</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            background-color: #f3b6b6;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slideDown 1s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color:#ffffff;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ffffff;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffe6f0;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #f3b6b6;
+        }
+
+        .media {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .media img, .media video {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .photo {
+        display: block;
+        margin: 20px auto;
+        width: 100%; /* Makes it responsive */
+        max-width: 500px; /* Increases max size while keeping responsiveness */
+        height: auto; /* Maintains aspect ratio */
+        border-radius: 15px; /* Keeps the rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    }
+
+        .counter {
+            font-size: 1.5rem;
+            color: #ec9bb6;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f3b6b6;
+            color: white;
+            position: sticky;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hellooo! </h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="memories.html">Memories</a>
+            <a href="reasons.html">Why I Love You</a>
+            <a href="been-together.html">Been-together</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Welcome to Our Special Place</h2>
+            <img src="media/vday.JPG" alt="A special memory" class="photo">
+            <p>
+                This is a little corner of the web just for us. Click through the pages to see the memories, reasons, and how long we've been together. I've put together for you. 💕
+            </p>
+        </section>
+    </main>
+
+    <footer>
+         💖 
+    </footer>
+</body>
+</html>
+
+<!-- Save this file as index.html and create separate pages (memories.html, reasons.html, message.html) with similar structure but unique content. Copy the header and footer to maintain consistency. Add specific animations or styles as desired for each page. -->

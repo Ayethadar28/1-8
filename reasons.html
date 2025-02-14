@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why I Love You</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #adc9f1;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #adc9f1;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffe6f0;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .reason-input {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .reason-input textarea {
+            width: 100%;
+            max-width: 600px;
+            height: 100px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        .reason-input button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: #adc9f1;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .reason-input button:hover {
+            background-color: #adc9f1;
+        }
+
+        .reason-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .reason-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #adc9f1;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .reason-list button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .delete-button {
+            background-color: #3a3636;
+            color: white;
+        }
+
+        .delete-button:hover {
+            background-color: #3c3333;
+        }
+
+        .edit-button {
+            background-color: #000000;
+            color: white;
+        }
+
+        .edit-button:hover {
+            background-color: #87a6d2;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #adc9f1;
+            color: white;
+            position: sticky;
+            bottom: 0;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const reasonsList = document.querySelector(".reason-list");
+            const reasonInput = document.querySelector("textarea");
+            const addReasonButton = document.querySelector("button");
+
+            // Load saved reasons from localStorage
+            const savedReasons = JSON.parse(localStorage.getItem("reasons")) || [];
+            savedReasons.forEach(reason => addReasonToList(reason));
+
+            // Add new reason
+            addReasonButton.addEventListener("click", function () {
+                const newReason = reasonInput.value.trim();
+                if (newReason) {
+                    addReasonToList(newReason);
+                    saveReason(newReason);
+                    reasonInput.value = "";
+                }
+            });
+
+            function addReasonToList(reasonText) {
+                const li = document.createElement("li");
+
+                const reasonSpan = document.createElement("span");
+                reasonSpan.textContent = reasonText;
+                li.appendChild(reasonSpan);
+
+                const editButton = document.createElement("button");
+                editButton.textContent = "Edit";
+                editButton.classList.add("edit-button");
+                editButton.addEventListener("click", function () {
+                    const newReason = prompt("Edit your reason:", reasonSpan.textContent);
+                    if (newReason) {
+                        reasonSpan.textContent = newReason;
+                        updateReasonInStorage(reasonText, newReason);
+                    }
+                });
+                li.appendChild(editButton);
+
+                const deleteButton = document.createElement("button");
+                deleteButton.textContent = "Delete";
+                deleteButton.classList.add("delete-button");
+                deleteButton.addEventListener("click", function () {
+                    li.remove();
+                    deleteReasonFromStorage(reasonText);
+                });
+                li.appendChild(deleteButton);
+
+                reasonsList.appendChild(li);
+            }
+
+            function saveReason(reason) {
+                savedReasons.push(reason);
+                localStorage.setItem("reasons", JSON.stringify(savedReasons));
+            }
+
+            function updateReasonInStorage(oldReason, newReason) {
+                const index = savedReasons.indexOf(oldReason);
+                if (index > -1) {
+                    savedReasons[index] = newReason;
+                    localStorage.setItem("reasons", JSON.stringify(savedReasons));
+                }
+            }
+
+            function deleteReasonFromStorage(reason) {
+                const index = savedReasons.indexOf(reason);
+                if (index > -1) {
+                    savedReasons.splice(index, 1);
+                    localStorage.setItem("reasons", JSON.stringify(savedReasons));
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Why I Love You 🤍</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="memories.html">Memories</a>
+            <a href="reasons.html">Why I Love You</a>
+            <a href="been-together.html">Been Together</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Reasons Why I Love You</h2>
+        <div class="reason-input">
+            <textarea placeholder="Write a reason here..."></textarea>
+            <button>Add Reason</button>
+        </div>
+        <ul class="reason-list">
+            <!-- Reasons will be added here dynamically -->
+        </ul>
+    </main>
+
+    <footer>
+        Made with 💖 
+    </footer>
+</body>
+</html>

@@ -1,0 +1,8 @@
+.photo {
+    display: block;
+    margin: 20px auto;
+    max-width: 90%; /* Ensures the photo doesn't exceed 90% of the page width */
+    height: auto; /* Maintains the aspect ratio of the image */
+    border-radius: 15px; /* Gives the photo rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for a nice effect */
+}

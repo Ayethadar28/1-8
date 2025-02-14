@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Koko</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe6f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            background-color: #f6b7d7;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slideDown 1s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        .memories-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .memory {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 200px;
+        }
+
+        .memory img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .memory button {
+            margin-top: 5px;
+            background-color: #ff6699;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        input, button {
+            margin: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: rgb(255, 255, 255);
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffe6f0;
+        }
+
+
+        main {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .photo-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .photo-card p {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #e8acca;
+            color: white;
+            position: sticky;
+            bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr); /* Adjust for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: 1fr; /* One column for very small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Memories</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="memories.html">Memories</a>
+            <a href="reasons.html">Why I Love You</a>
+            <a href="been-together.html">Been Together</a>
+        </nav>
+    </header>
+   
+
+    <main>
+        <h2>A Walk Down Memory Lane</h2>
+        <div class="gallery">
+            <!-- Add 24 photo-card blocks below -->
+            <div class="photo-card">
+                <img src="media/usA.JPG" alt="Memory 1">
+                <p>A- Antelope Canyon(our first trip together^^)</p>
+            </div>
+            <div class="photo-card">
+                <img src="media/usB.jpg" alt="Memory 2">
+                <p>B -Beach date</p>
+            </div>
+            <div class="photo-card">
+                <img src="media/usC.jpg" alt="Memory 1">
+                <p>C -Concert date with you  </p>
+            </div>
+            <div class="photo-card">
+                <img src="media/usD.JPG" alt="Memory 1">
+                <p>D -Our dinner date  </p>
+            </div>
+
+            <div class="photo-card">
+                <img src="media/usE.JPG" alt="Memory 1">
+                <p>E - We need escape room date, pleaseeee 🥺 </p>
+            </div>
+            <div class="photo-card">
+                <img src="media/usF.jpg" alt="Memory 2">
+                <p>F- Spent New Year's under the fireworks together ✨🎆 </p>
+            </div>
+            <div class="photo-card">
+                <img src="media/usG.jpg" alt="Memory 2">
+                <p>G - Our date at the Gallery</p>
+            </div>
+            <div class="photo-card">
+                <img src="media/usH.JPG" alt="Memory 2">
+                <p>H - Kind of like hiking... but not really 😄 </p>
+            </div>
+            <div class="photo-card">
+                <img src="media/us.JPG" alt="Memory 2">
+                <p> I - I love you 🫶😛</p>
+            </div>
+            <div class="photo-card">
+                <img src="media/usJ.jpg" alt="Memory 2">
+                <p> J - Our trip to Joshua Tree</p>
+            </div>
+            <div class="photo-card">
+                <img src="media/usK.JPG" alt="Memory 2">
+                <p> K - Karaoke la la la..😉</p> 
+            </div>
+            <div class="photo-card">
+                <img src="media/usL.jpg" alt="Memory 2">
+                <p> L - Las Vegas. I wanna go there again ☹️</p> 
+            </div>
+            <div class="photo-card">
+                <img src="media/usM.jpg" alt="Memory 2">
+                <p> M - Movie night</p> 
+            </div>
+            <div class="photo-card">
+                <img src="media/usN.jpg" alt="Memory 2">
+                <p>N - Night out in Long Beach ✨🌊</p> 
+            </div>
+            <div class="photo-card">
+                <img src="media/usO.jpg" alt="Memory 2">
+                <p>O - Onboard 🌊🚤</p> 
+            </div>
+            <div class="photo-card">
+                <img src="media/usP.jpg" alt="Memory 2">
+                <p> P - Polaroid love ❤️</p> 
+            </div>
+            <div class="photo-card">
+                <img src="media/usR.JPG" alt="Memory 2">
+                <p> R - Road trip with you ~</p> 
+            </div>
+            <div class="photo-card">
+                <img src="media/usT.JPG" alt="Memory 2">
+                <p> T - Too cutee lol </p> 
+            </div>
+            <div class="photo-card">
+                <img src="media/usU.jpg" alt="Memory 2">
+                <p> U - UwU </p> 
+            </div>
+            <div class="photo-card">
+                <img src="media/usV.jpg" alt="Memory 2">
+                <p> V - Vacation Time </p> 
+            </div>
+            <div class="photo-card">
+                <img src="media/usW.jpg" alt="Memory 2">
+                <p> W - at UW </p> 
+            </div>
+            <div class="photo-card">
+                <img src="media/usX.jpg" alt="Memory 2">
+                <p> X - XoXo </p> 
+            </div>
+        
+             
+        
+
+
+
+
+            
+
+            
+
+
+
+
+
+
+
+
+
+            
+        </div>
+        <main>
+            <h2>Add a New Memory</h2>
+            <input type="file" id="photoInput" accept="image/*">
+            <input type="text" id="captionInput" placeholder="Enter a caption">
+            <button onclick="addMemory()">Add Memory</button>
+    
+            <div class="memories-container" id="memoriesContainer"></div>
+        </main>
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", loadMemories);
+        
+            function addMemory() {
+                const photoInput = document.getElementById("photoInput");
+                const captionInput = document.getElementById("captionInput");
+                const gallery = document.querySelector(".gallery"); // Ensure photos go inside the gallery
+        
+                if (photoInput.files.length === 0 || captionInput.value.trim() === "") {
+                    alert("Please select a photo and enter a caption.");
+                    return;
+                }
+        
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const memory = {
+                        photo: event.target.result,
+                        caption: captionInput.value.trim()
+                    };
+        
+                    let memories = JSON.parse(localStorage.getItem("memories")) || [];
+                    memories.push(memory);
+                    localStorage.setItem("memories", JSON.stringify(memories));
+        
+                    displayMemory(memory);
+                };
+                reader.readAsDataURL(photoInput.files[0]);
+        
+                captionInput.value = "";
+            }
+        
+            function displayMemory(memory) {
+                const gallery = document.querySelector(".gallery"); // Targeting the correct container
+                const memoryDiv = document.createElement("div");
+                memoryDiv.classList.add("photo-card");
+                memoryDiv.innerHTML = `
+                    <img src="${memory.photo}" alt="Memory">
+                    <p>${memory.caption}</p>
+                    <button onclick="deleteMemory(this)">Delete</button>
+                `;
+                gallery.appendChild(memoryDiv); // Append to the gallery next to the last image
+            }
+        
+            function loadMemories() {
+                let memories = JSON.parse(localStorage.getItem("memories")) || [];
+                memories.forEach(displayMemory);
+            }
+        </script>
+        
+    </main>
+
+    <footer>
+        💖 
+    </footer>
+</body>
+</html>
